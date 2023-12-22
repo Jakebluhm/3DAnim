@@ -9,6 +9,7 @@ public class Planes : MonoBehaviour
     AudioSource[] audioSources = new AudioSource[6];
     AudioClip[] audioClips = new AudioClip[6];
     public AudioMixerGroup planeAudioMixerGroup; // Assign this in the Inspector
+    public bool playSounds = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,8 @@ public class Planes : MonoBehaviour
         planes[index].transform.rotation = Quaternion.Euler(0, 0, 0);
         boxCollider[index] = planes[index].AddComponent<BoxCollider>();
         boxCollider[index].material = bouncyMaterial; // Apply bouncy material to the plane's collider
-        planeCollisionDetectors[index] = planes[index].AddComponent<PlaneCollisionDetector>();  
+        planeCollisionDetectors[index] = planes[index].AddComponent<PlaneCollisionDetector>();
+        planeCollisionDetectors[index].playSound = playSounds;
         planes[index].tag = "Plane";
         planes[index].name = "Plane " + index;
         audioSources[index] = planes[index].AddComponent<AudioSource>();
@@ -50,6 +52,7 @@ public class Planes : MonoBehaviour
         boxCollider[index] = planes[index].AddComponent<BoxCollider>();
         boxCollider[index].material = bouncyMaterial; // Apply bouncy material to the plane's collider
         planeCollisionDetectors[index] = planes[index].AddComponent<PlaneCollisionDetector>();
+        planeCollisionDetectors[index].playSound = playSounds;
         planes[index].tag = "Plane";
         planes[index].name = "Plane " + index;
         audioSources[index] = planes[index].AddComponent<AudioSource>();
@@ -66,6 +69,7 @@ public class Planes : MonoBehaviour
         boxCollider[index] = planes[index].AddComponent<BoxCollider>();
         boxCollider[index].material = bouncyMaterial; // Apply bouncy material to the plane's collider
         planeCollisionDetectors[index] = planes[index].AddComponent<PlaneCollisionDetector>();
+        planeCollisionDetectors[index].playSound = playSounds;
         planes[index].tag = "Plane";
         planes[index].name = "Plane " + index;
         audioSources[index] = planes[index].AddComponent<AudioSource>();
@@ -82,6 +86,7 @@ public class Planes : MonoBehaviour
         boxCollider[index] = planes[index].AddComponent<BoxCollider>();
         boxCollider[index].material = bouncyMaterial; // Apply bouncy material to the plane's collider
         planeCollisionDetectors[index] = planes[index].AddComponent<PlaneCollisionDetector>();
+        planeCollisionDetectors[index].playSound = playSounds;
         planes[index].tag = "Plane";
         planes[index].name = "Plane " + index;
         audioSources[index] = planes[index].AddComponent<AudioSource>();
@@ -98,6 +103,7 @@ public class Planes : MonoBehaviour
         boxCollider[index] = planes[index].AddComponent<BoxCollider>();
         boxCollider[index].material = bouncyMaterial; // Apply bouncy material to the plane's collider
         planeCollisionDetectors[index] = planes[index].AddComponent<PlaneCollisionDetector>();
+        planeCollisionDetectors[index].playSound = playSounds;
         planes[index].tag = "Plane";
         planes[index].name = "Plane " + index;
         audioSources[index] = planes[index].AddComponent<AudioSource>();
@@ -114,6 +120,7 @@ public class Planes : MonoBehaviour
         boxCollider[index] = planes[index].AddComponent<BoxCollider>();
         boxCollider[index].material = bouncyMaterial; // Apply bouncy material to the plane's collider
         planeCollisionDetectors[index] = planes[index].AddComponent<PlaneCollisionDetector>();
+        planeCollisionDetectors[index].playSound = playSounds;
         planes[index].tag = "Plane";
         planes[index].name = "Plane " + index;
         audioSources[index] = planes[index].AddComponent<AudioSource>();

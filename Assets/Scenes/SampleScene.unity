@@ -230,6 +230,9 @@ GameObject:
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
   - component: {fileID: 963194231}
+  - component: {fileID: 963194233}
+  - component: {fileID: 963194232}
+  - component: {fileID: 963194234}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -315,6 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planeAudioMixerGroup: {fileID: -1544552682877131071, guid: 639b2204ee2b5f54bb8b49b0b627ec42, type: 2}
+  playSounds: 1
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,8 +332,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spherePrefab: {fileID: 1875866490475988946, guid: aa177aa32bf91094aaf37e6aed6c02e4, type: 3}
-  initialVelocity: {x: 5, y: 0, z: 0.06}
-  initialPosition: {x: 4, y: 5, z: -3}
+  initialVelocity: {x: 5, y: 0, z: 0}
+  initialPosition: {x: 0, y: 5, z: 4}
+  sphereAudioMixerGroup: {fileID: -1544552682877131071, guid: 639b2204ee2b5f54bb8b49b0b627ec42, type: 2}
+  useGravity: 0
+  speedIncreaseFactor: 1
+  playSound: 1
+  interpolate: 1
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,5 +352,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spherePrefab: {fileID: 1875866490475988946, guid: aa177aa32bf91094aaf37e6aed6c02e4, type: 3}
-  initialVelocity: {x: 0, y: 5.79, z: 0}
-  initialPosition: {x: 0, y: 0.2, z: 3.28}
+  initialVelocity: {x: 6, y: 0, z: 0}
+  initialPosition: {x: 0, y: 5, z: 2}
+  sphereAudioMixerGroup: {fileID: -1544552682877131071, guid: 639b2204ee2b5f54bb8b49b0b627ec42, type: 2}
+  useGravity: 0
+  speedIncreaseFactor: 1
+  playSound: 1
+  interpolate: 1
+--- !u!114 &963194232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857a01203d3e8394cb802bdf0a5e1a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spherePrefab: {fileID: 1875866490475988946, guid: aa177aa32bf91094aaf37e6aed6c02e4, type: 3}
+  initialVelocity: {x: 8, y: 0, z: 0}
+  initialPosition: {x: 0, y: 5, z: -2}
+  sphereAudioMixerGroup: {fileID: -1544552682877131071, guid: 639b2204ee2b5f54bb8b49b0b627ec42, type: 2}
+  useGravity: 0
+  speedIncreaseFactor: 1
+  playSound: 1
+  interpolate: 1
+--- !u!114 &963194233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857a01203d3e8394cb802bdf0a5e1a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spherePrefab: {fileID: 1875866490475988946, guid: aa177aa32bf91094aaf37e6aed6c02e4, type: 3}
+  initialVelocity: {x: 7, y: 0, z: 0}
+  initialPosition: {x: 0, y: 5, z: 0}
+  sphereAudioMixerGroup: {fileID: -1544552682877131071, guid: 639b2204ee2b5f54bb8b49b0b627ec42, type: 2}
+  useGravity: 0
+  speedIncreaseFactor: 1
+  playSound: 1
+  interpolate: 1
+--- !u!114 &963194234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857a01203d3e8394cb802bdf0a5e1a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spherePrefab: {fileID: 1875866490475988946, guid: aa177aa32bf91094aaf37e6aed6c02e4, type: 3}
+  initialVelocity: {x: 9, y: 0, z: 0}
+  initialPosition: {x: 0, y: 5, z: -4}
+  sphereAudioMixerGroup: {fileID: -1544552682877131071, guid: 639b2204ee2b5f54bb8b49b0b627ec42, type: 2}
+  useGravity: 0
+  speedIncreaseFactor: 1
+  playSound: 1
+  interpolate: 1

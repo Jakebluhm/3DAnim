@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlaneCollisionDetector : MonoBehaviour
 {
     public bool HasCollided { get; private set; }
+    public bool playSound = false;
 
     private AudioSource audioSource;
 
@@ -11,7 +12,7 @@ public class PlaneCollisionDetector : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource component not found!");
+            Debug.LogError("PlaneCollisionDetector - AudioSource component not found!");
         }
     }
 
@@ -27,7 +28,7 @@ public class PlaneCollisionDetector : MonoBehaviour
     public void PlaySound()
     {
         // Play the sound
-        if (audioSource != null && audioSource.clip != null)
+        if (audioSource != null && audioSource.clip != null && playSound)
         {
             audioSource.Play();
         }
