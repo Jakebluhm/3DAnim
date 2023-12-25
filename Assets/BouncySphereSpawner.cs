@@ -12,10 +12,52 @@ public class BouncySphereSpawner : MonoBehaviour
     public float speedIncreaseFactor = 1.0f;
     public bool playSound = true;
     public RigidbodyInterpolation interpolate;
+    public float frequency = 1.0f;
 
 
     AudioSource audioSource;
+    public GameObject SpawnSphere(Vector3 position, float freq)
+    {
 
+        frequency = freq;
+
+        GameObject sphere = Instantiate(spherePrefab, position, Quaternion.identity);
+        sphere.tag = "Sphere";
+
+        // Apply the bouncy material to the sphere's collider
+        Collider sphereCollider = sphere.GetComponent<Collider>();
+        if (sphereCollider != null)
+        {
+            sphereCollider.material = bouncyMaterial;
+        }
+
+
+        TimeBasedMovement timePosScript = sphere.AddComponent<TimeBasedMovement>();
+        timePosScript.frequency = frequency;
+
+        //// Setup Rigidbody
+        //Rigidbody rb = sphere.AddComponent<Rigidbody>();
+        //rb.interpolation = interpolate;
+        //rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
+        //rb.velocity = initialVelocity;
+        //rb.useGravity = useGravity;
+        //rb.drag = 0;
+        //rb.angularDrag = 0;
+        //rb.freezeRotation = true;
+
+        //// Additional components
+        //SphereCollisionHandler sphereCollision = sphere.AddComponent<SphereCollisionHandler>();
+        //sphereCollision.playSound = playSound;
+        //sphereCollision.speedIncreaseFactor = speedIncreaseFactor;
+
+        // Audio setup
+        AudioSource audioSource = sphere.AddComponent<AudioSource>();
+        audioSource.clip = Resources.Load<AudioClip>("c");
+        audioSource.outputAudioMixerGroup = sphereAudioMixerGroup;
+        audioSource.spatialBlend = 1.0f;
+
+        return sphere;
+    }
     void Start()
     {
         // Load the bouncy material from the Assets
@@ -61,9 +103,9 @@ public class BouncySphereSpawner : MonoBehaviour
         //rb.drag = 0;
         //rb.angularDrag = 0;
         //rb.freezeRotation = true; 
-        SphereCollisionHandler sphereCollission = sphere.AddComponent<SphereCollisionHandler>();
-        sphereCollission.playSound = playSound;
-        sphereCollission.speedIncreaseFactor = speedIncreaseFactor;
+        //SphereCollisionHandler sphereCollission = sphere.AddComponent<SphereCollisionHandler>();
+        //sphereCollission.playSound = playSound;
+        //sphereCollission.speedIncreaseFactor = speedIncreaseFactor;
         audioSource = sphere.AddComponent<AudioSource>();
         audioSource.clip = Resources.Load<AudioClip>("c");
         audioSource.outputAudioMixerGroup = sphereAudioMixerGroup;
